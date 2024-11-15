@@ -1,0 +1,89 @@
+// Ejercicio 1: Revertir una cadena
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+console.log(reverseString("Hola"));
+
+// Ejercicio 2: Número más grande en un arreglo
+function findLargestNumber(arr) {
+  return Math.max(...arr);
+}
+
+console.log(findLargestNumber([1, 2, 3, 4, 5]));
+
+// Ejercicio 3: Verificar si una palabra es un palíndromo
+function isPalindrome(word) {
+  word = word.toLowerCase().replace(/\s/g, '');
+  return word === word.split('').reverse().join('');
+}
+
+console.log(isPalindrome("Ana"));
+
+// Ejercicio 4: Eliminar duplicados de un arreglo
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+console.log(removeDuplicates([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10]));
+
+// Ejercicio 5: Contar cuántas veces aparece un valor en un arreglo
+function countOccurrences(arr, value) {
+  return arr.filter(item => item === value).length;
+}
+
+console.log(countOccurrences([1, 2, 3, 1, 4, 1], 1));
+
+// Ejercicio 6: Sumar todos los elementos de un arreglo
+function sumArray(arr) {
+  return arr.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sumArray([1, 2, 3, 4, 5]));
+
+// Ejercicio 7: Obtener el salario promedio de todos los empleados
+function averageSalary(salaries) {
+  return salaries.reduce((acc, salary) => acc + salary, 0) / salaries.length;
+}
+
+console.log(averageSalary([2000, 2500, 3000, 1500]));
+
+// Ejercicio 8: Mostrar el salario más alto en la empresa
+function highestSalary(salaries) {
+  return Math.max(...salaries);
+}
+
+console.log(highestSalary([2000, 2500, 3000, 1500]));
+
+// Ejercicio 9: Reemplazar todos los elementos en un arreglo por otro valor
+function replaceAll(arr, value, newValue) {
+  return arr.map(item => (item === value ? newValue : item));
+}
+
+console.log(replaceAll([1, 2, 3, 2, 4], 2, 10));
+
+// Ejercicio 10: Verificar si un número es primo
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+console.log(isPrime(7));
+
+// Ejercicio 11: Contar la cantidad de palabras en una frase
+function countWords(sentence) {
+  return sentence.split(' ').length;
+}
+
+console.log(countWords("Esto es una frase de ejemplo"));
+
+// Ejercicio 12: Verificar si un arreglo está vacío
+function isEmpty(arr) {
+  return arr.length === 0;
+}
+
+console.log(isEmpty([1, 2, 3]));
+console.log(isEmpty([]));
