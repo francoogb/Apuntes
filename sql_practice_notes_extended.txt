@@ -1,0 +1,136 @@
+# Apuntes de SQL para Práctica
+
+## Creacion y abrir bd sqlite3 ejemplo.db
+
+
+## Creación de Tabla
+Para crear una tabla en SQLite, usa la siguiente sintaxis:
+
+```sql
+CREATE TABLE PERSONAS (
+  nombre VARCHAR(20),
+  apellido VARCHAR(20),
+  sexo CHAR(2),
+  fecha_nac VARCHAR
+);
+```
+
+## Insertar Datos en una Tabla
+Insertar datos en una tabla usando la siguiente sintaxis:
+
+```sql
+INSERT INTO PERSONAS (nombre, apellido, sexo, fecha_nac) 
+VALUES ("Franco", "Ramirez", "M", "29/09/1998");
+```
+
+## Consultas Básicas en SQL
+Para seleccionar todos los registros de una tabla:
+
+```sql
+SELECT * FROM PERSONAS;
+```
+
+Para seleccionar columnas específicas:
+
+```sql
+SELECT nombre, apellido FROM PERSONAS;
+```
+
+## Añadir Columnas a una Tabla Existente
+Para añadir una nueva columna a una tabla existente:
+
+```sql
+ALTER TABLE PERSONAS ADD COLUMN fecha_nac VARCHAR;
+```
+
+## Actualización de Datos
+Para actualizar datos existentes en una tabla:
+
+```sql
+UPDATE PERSONAS 
+SET apellido = 'Lopez', fecha_nac = '01/01/1990' 
+WHERE nombre = 'Franco';
+```
+
+## Ver la Estructura de una Tabla
+Para revisar la estructura de la tabla y sus columnas:
+
+```sql
+PRAGMA table_info(PERSONAS);
+```
+
+## Consultas Comunes de SQL para Practicar
+
+1. **Seleccionar todos los datos**: 
+   ```sql
+   SELECT * FROM personas;
+   ```
+
+2. **Seleccionar columnas específicas**: 
+   ```sql
+   SELECT nombre, apellido FROM personas;
+   ```
+
+3. **Condiciones con `WHERE`**: 
+   ```sql
+   SELECT * FROM personas WHERE edad > 30;
+   ```
+
+4. **Ordenar resultados**: 
+   ```sql
+   SELECT * FROM personas ORDER BY apellido DESC;
+   ```
+
+5. **Contar registros**: 
+   ```sql
+   SELECT COUNT(*) FROM personas;
+   ```
+
+## Consultas adicionales
+
+### Consulta 7: Mostrar el salario promedio de todos los empleados.
+
+```sql
+SELECT AVG(salario) AS salario_promedio FROM empleados;
+```
+**Comentario**: `AVG` calcula el promedio de los valores en la columna `salario`.
+
+### Consulta 8: Mostrar el salario más alto en la empresa.
+
+```sql
+SELECT MAX(salario) AS salario_mas_alto FROM empleados;
+```
+**Comentario**: `MAX` devuelve el valor más alto en la columna `salario`.
+
+### Consulta 9: Mostrar el número total de empleados.
+
+```sql
+SELECT COUNT(*) AS total_empleados FROM empleados;
+```
+**Comentario**: `COUNT(*)` cuenta el número total de registros en la tabla `empleados`.
+
+### Consulta 10: Mostrar la suma total de los salarios.
+
+```sql
+SELECT SUM(salario) AS total_salarios FROM empleados;
+```
+**Comentario**: `SUM` suma todos los valores en la columna `salario`.
+
+### Consulta 11: Mostrar todos los empleados cuyo salario es mayor a 3000.
+
+```sql
+SELECT * FROM empleados WHERE salario > 3000;
+```
+**Comentario**: Esta consulta selecciona a los empleados que ganan más de 3000 usando `WHERE`.
+
+### Consulta 12: Ordenar empleados por nombre en orden ascendente.
+
+```sql
+SELECT * FROM empleados ORDER BY nombre ASC;
+```
+**Comentario**: La cláusula `ORDER BY` organiza los resultados por la columna `nombre` en orden ascendente (`ASC`).
+
+## Recursos para Practicar
+- [SQLite Online](https://sqliteonline.com/)
+- [SQL Fiddle](http://sqlfiddle.com/)
+- [DB Fiddle](https://www.db-fiddle.com/)
