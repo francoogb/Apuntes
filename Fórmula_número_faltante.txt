@@ -1,0 +1,36 @@
+
+Fórmula para encontrar el número faltante en un arreglo de enteros consecutivos:
+
+1. **Problema**: Tienes un arreglo de enteros consecutivos del 1 al n, pero falta exactamente un número.
+
+2. **Solución**:
+   - Calcular la suma total esperada para una secuencia completa del 1 al n usando la fórmula:
+     S = (n(n + 1)) / 2
+   - Sumar los elementos que ya están en el arreglo.
+   - Restar la suma del arreglo de la suma esperada para obtener el número faltante.
+
+3. **Ejemplo**:
+
+   - Dado el arreglo [1, 2, 4, 5] con n = 5, el número faltante sería:
+     - Suma esperada:
+       S = (5 * (5 + 1)) / 2 = 15
+     - Suma del arreglo:
+       1 + 2 + 4 + 5 = 12
+     - Resta:
+       15 - 12 = 3
+
+   Entonces, el número que falta es 3.
+
+function encontrarFaltante(arr, n) {
+    // Suma esperada para una secuencia completa de 1 a n
+    let sumaEsperada = (n * (n + 1)) / 2;
+    
+    // Suma de los elementos actuales en el arreglo
+    let sumaActual = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sumaActual += arr[i];
+    }
+    
+    // El número faltante es la diferencia entre la suma esperada y la suma actual
+    return sumaEsperada - sumaActual;
+}
